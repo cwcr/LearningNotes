@@ -12,7 +12,7 @@ requirepass zP0GHiGo563Y2mwg7YxksE6I7w31Dshl
 修改redis.conf 
 ``` conf
 # 禁用flushall命令 如需要AOF备份，该命令不能禁用
-# rename-command FLUSHALL ""
+rename-command FLUSHALL ""
 # 禁用flushdb命令
 rename-command FLUSHDB ""
 # 禁用keys命令
@@ -28,4 +28,5 @@ rename-command KEYS ""
 # 指定IP可以访问
 # 当访问地址不含127.0.0.1的时候 redis-cli 不能使用
 # bind 127.0.0.1 192.160.0.1
+bind 127.0.0.1
 ```
