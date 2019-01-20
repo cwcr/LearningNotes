@@ -1,6 +1,7 @@
 # 建议的Redis安全配置
+以下所有配置都通过修改redis.conf 添加
+
 ## Redis添加密码
-修改redis.conf 添加
 ``` conf
 requirepass zP0GHiGo563Y2mwg7YxksE6I7w31Dshl
 ```
