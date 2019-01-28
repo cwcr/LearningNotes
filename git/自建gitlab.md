@@ -12,7 +12,7 @@
 
 由于本次安装使用的是阿里云学生优惠机，单核/2G/40G,勉强达到硬件要求，首先调整swap分区为2G
 
-基于[阿里云Swap](https://yq.aliyun.com/articles/52098)社区介绍，阿里云ECS实例默认是不开启swap分区，所以需要按照以下步骤逐步创建分区
+基于[阿里云社区](https://yq.aliyun.com/articles/52098)介绍，阿里云ECS实例默认是不开启swap分区，所以需要按照以下步骤逐步创建分区。请在安装gitlab之前先开启swap分区，否则会出现阿里云访问过慢的问题，另外可能出现[gitlab-unicorn无法启动报502的问题](https://docs.gitlab.com/ee/administration/operations/unicorn.html)
 ``` sh
 cat /proc/swaps #查看系统是否存在swap分区
 mkdir /data
@@ -67,10 +67,9 @@ curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scrip
 
 ``` sh
 yum install gitlab-ce #不含域名安装
-```
 
-``` sh
-EXTERNAL_URL="http://域名" yum install gitlab-ce # 含有域名安装
+# 含有域名安装
+# EXTERNAL_URL="http://域名" yum install gitlab-ce 
 ```
 
 _注：以上为gitlab 社区版安装方式，如需要企业版，可将其中的gitlab-ce 更换为gitlab-ee。同时需要订阅企业许可_
@@ -123,3 +122,11 @@ tar -zxvf gitlab-11-7-stable-zh.tar.gz
 ```gitlab-ctl restart ```
 
 至此，汉化工作到此结束。
+
+---
+## gitlab 相关命令
+
+ * gitlab-ctl reconfig 使新配置生效
+ * gitlab-ctl restart 启动/重启gitlab
+ * gitlab-ctl status 查看服务状态
+ * gitlab-ctl tail unicorn 查看指定服务的日志，unicorn可替换为其他服务
