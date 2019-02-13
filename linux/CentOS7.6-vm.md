@@ -19,3 +19,7 @@ http://mirrors.aliyun.com/repo/Centos-7.repo
 ### docker 相关
 * 添加国内daemon镜像 https://registry.docker-cn.com
 * docker run hello-world
+* [Docker-rebbitmq](https://hub.docker.com/_/rabbitmq)
+  * Database-dir: /var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+  * home dir       : /var/lib/rabbitmq
+  * config file(s) : /etc/rabbitmq/rabbitmq.conf

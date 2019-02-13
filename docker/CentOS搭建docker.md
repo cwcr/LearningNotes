@@ -113,6 +113,7 @@ See 'docker run --help'
 >   ]
 > }
 > ```
+> 也可替换为 ``` https://j0andt2p.mirror.aliyuncs.com/ ```(阿里云docker-加速)
 > 请注意保持json格式，否则会出现docker无法启动的问题
 > 重启docker
 > ``` sh
