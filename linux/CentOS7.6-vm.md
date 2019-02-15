@@ -23,3 +23,9 @@ http://mirrors.aliyun.com/repo/Centos-7.repo
   * Database-dir: /var/lib/rabbitmq/mnesia/rabbit@my-rabbit
   * home dir       : /var/lib/rabbitmq
   * config file(s) : /etc/rabbitmq/rabbitmq.conf
+
+### 开放端口
+``` sh rabbitmq用
+firewall-cmd --zone=public --add-port=5627/tcp --permanent
+firewall-cmd --zone=public --add-port=15627/tcp --permanent
+```
