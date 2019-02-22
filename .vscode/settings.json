@@ -1,6 +1,0 @@
-{
-    "git.autofetch": true,
-    "breadcrumbs.enabled": true,
-    "markdown.preview.breaks": true,
-    "java.dependency.packagePresentation": "flat"
-}
