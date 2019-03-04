@@ -78,7 +78,7 @@ _注：以上为gitlab 社区版安装方式，如需要企业版，可将其中
 
 第一次访问的时候，需要设置root用户的密码。设置好后请妥善保存
 
-如密码忘记，可以访问[gutlab-security](https://docs.gitlab.com/ce/security/reset_root_password.html)安步骤修改root密码
+如密码忘记，可以访问[gutlab-security](https://docs.gitlab.com/ce/security/reset_root_password.html)按步骤修改root密码
 
 ---
 
