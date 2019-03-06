@@ -3,13 +3,13 @@
 ## Git
 >* [git命令记录](./git/git命令.md)
 ## Hap
->* [关于Lov的配置说明](./hap/关于Lov的配置说明.md)
+>* [关于Lov的配置说明](./hap/关于lov的配置说明.md)
 ## Java
 >* [java.time.*](./java/java.time.md)
 >* [Tomcat日志乱码问题](./java/Tomcat乱码问题.md)
 >* [Tomcat启动时jar包互相依赖问题](./java/Tomcat启动时jar包互相依赖问题.md)
 ## NoSQL
->* [MongoDB](./Nosql/MongoDB学习记录.md)
+>* [MongoDB](./NoSql/MongoDB学习记录.md)
 >* [Redis命令记录](./NoSql/redis/redis命令记录.md)
 >* [Redis集群](./NoSql/redis/Redis集群.md)
 ## 前端
