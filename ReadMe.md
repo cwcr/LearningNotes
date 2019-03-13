@@ -20,6 +20,8 @@
 <!-- >* [docker学习日志](./docker/Docker-learning.md) -->
 >* [Docker常用命令](./docker/Docker常用命令.md)
 >* [Docker资源](./docker/Docker资源.md)
+## RabbitMq
+>* [Centos7环境下安装RabbitMq](./rabbitmq/Centos安装RabbitMq.md)
 
 ---
 #### [TOP](#head)
