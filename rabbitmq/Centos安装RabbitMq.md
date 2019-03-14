@@ -63,8 +63,10 @@ rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 sudo yum install socat
 # 安装RabbitMq
 yum install rabbitmq-server-3.6.1-1.noarch.rpm
+# 复制配置文件，方便后续修改相关配置
+cp /usr/share/doc/rabbitmq-server-3.6.15/rabbitmq.config.example  /etc/rabbitmq/rabbitmq.config # 该步可以省略，不影响启动
 # 启动RabbitMq
-systemctl start rabbitmq-server
+systemctl restart rabbitmq-server
 # 查看rabbitMq是否启动成功并查看服务器状态
 rabbitmqctl status
 # 设置rabbitMq 自启动
@@ -74,3 +76,11 @@ rabbitmqctl status
 ```
 
 至此RabbitMq安装完成
+
+---
+
+**配置其他ip访问**
+
+由于RabbitMq，提供默认用户Guest，处于安全因素考虑，Guest用户只能使用localhost访问，同时建议修改Guest用户密码。
+
+所以，如果需要使用外部ip来访问rabbitmq,则需要创建一个新的账号，并为新账号提供远程ip访问的权限。[命令参考](./rabbitmq常用命令.md#newUser)
