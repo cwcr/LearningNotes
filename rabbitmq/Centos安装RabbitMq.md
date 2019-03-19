@@ -4,12 +4,14 @@
 **安装环境**
 
 本次安装基于以下环境安装
+
 * 阿里云
 * CentOS 7.3
 
 ---
 **安装过程**
 1、由于RabbitMq是基于Erlang开发的，所以需要先安装Erlang环境
+
 ``` sh
 # Centos官方镜像尚未更新版本，Erlang版本较老，所以这里使用wget+npm方式安装Erlang环境
 # 可以访问 https://packages.erlang-solutions.com/erlang/ 获取最新程序包
@@ -25,6 +27,7 @@ mkdir /usr/local/erlang
 cd otp_src_19.3
 ./configure --prefix=/usr/local/erlang --without-javac
 ```
+
 编译的时候出现以下问题可以忽略
 
 ![configure警告](.image/configure_error.png)
@@ -39,13 +42,14 @@ export PATH=$PATH:/usr/local/erlang/bin
 # 安装完成后执行以下命令测试
 erl
 ```
+
 ![erlang命令行界面](.image/erlang_shell.png)
 
 出现如上界面，则说明erlang安装成功
+
 ``` erlang
 halt() . #退出
 ```
-
 
 2、安装RabbitMq
 ```sh
@@ -102,7 +106,6 @@ rabbitmq-plugins enable rabbitmq_management
 使用浏览器访问 http://公网ip:15672 可以看到如下界面
 
 ![rabbitMQ](.image/rabbitmq_login.png)
-
 
 > 除此之外，阿里云服务器需要自定义配置防火墙过滤权限，需同时开发5672，15672两个端口的TCP访问权限
 
