@@ -52,6 +52,7 @@ halt() . #退出
 ```
 
 2、安装RabbitMq
+
 ```sh
 #下载官方rpm包 https://www.rabbitmq.com/releases/rabbitmq-server/
 wget -P /root "https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.15/rabbitmq-server-3.6.15-1.el7.noarch.rpm"

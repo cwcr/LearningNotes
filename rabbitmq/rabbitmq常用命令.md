@@ -1,7 +1,9 @@
 # Rabbitmq 常用命令
 
-### 新建用户
+## 新建用户
+
 <span id="newUser"></span>
+
 ``` sh
 rabbitmqctl add_user admin admin #新建用户
 rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*" #开放用户访问权限
