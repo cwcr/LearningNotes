@@ -9,6 +9,7 @@
 * CentOS 7.3
 
 ---
+
 **安装过程**
 1、由于RabbitMq是基于Erlang开发的，所以需要先安装Erlang环境
 

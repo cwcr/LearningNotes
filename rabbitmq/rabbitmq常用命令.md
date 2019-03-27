@@ -1,8 +1,6 @@
 # Rabbitmq 常用命令
 
-## 新建用户
-
-<span id="newUser"></span>
+## 新建用户 {#newUser}
 
 ``` sh
 rabbitmqctl add_user admin admin #新建用户

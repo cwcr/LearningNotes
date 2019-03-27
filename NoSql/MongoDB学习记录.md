@@ -1,6 +1,8 @@
 # MongoDB学习使用记录(Python)
 
 ## MongoDB与结构性数据库概念比对
+
+<!--
 <table style="text-align: center;">
     <tr>
         <th>SQL概念</th><th>MongoDB概念</th><th>解释说明</th>
@@ -27,11 +29,24 @@
         <td>primary key</td><td>primary key</td><td>主键。结构性数据库需要指定；MongoDB默认将 '_id' 设为主键</td>
     </tr>
 </table>
+-->
+
+| SQL概念 | MongoDB概念| 解释说明 |
+|---|---|---|---|
+| database | database | 数据库 |
+| table | collection | 数据库表/集合 |
+| row | document | 数据库行记录/文档 |
+| column | field | 字段/域 |
+| index | index索引 |  |
+| table | joins- | MongoDB不支持表连接 |
+| primary key | primary key	主键。结构性数据库需要指定； | MongoDB默认将 '_id' 设为主键 |
 
 ## Python操作MongoDB数据库
+
 * `pip install pymongo` 安装pymongo组件
-*  创建数据库连接
-    ``` py
+* 创建数据库连接
+
+``` py
     from pymongo import MongoClient￼
 
     # 基于IP+端口获取连接

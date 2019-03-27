@@ -2,6 +2,7 @@
 
 ---
 1、用户的创建与授权
+
 ``` SQL
  insert into mysql.user(Host,User,Password) values("localhost","sonar",password("sonar")); -- 创建用户
  -- grant 权限 on 数据库.* to 用户名@登录主机 identified by "密码";　
