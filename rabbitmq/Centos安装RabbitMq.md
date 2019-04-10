@@ -112,3 +112,51 @@ rabbitmq-plugins enable rabbitmq_management
 > 除此之外，阿里云服务器需要自定义配置防火墙过滤权限，需同时开发5672，15672两个端口的TCP访问权限
 
 至此，外网访问权限配置成功
+
+## Docker安装RabbitMQ
+
+[Docker安装](../docker/CentOS搭建docker.md)
+
+``` sh
+#docker 安装后执行以下命令
+docker search rabbitmq # 查询镜像
+########################################################################################################################################################
+## INDEX       NAME                                                   DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED  ##
+## docker.io   docker.io/rabbitmq                                     RabbitMQ is an open source multi-protocol ...   2581      [OK]                  ##
+## docker.io   docker.io/bitnami/rabbitmq                             Bitnami Docker Image for RabbitMQ               26                   [OK]       ##
+## docker.io   docker.io/tutum/rabbitmq                               Base docker image to run a RabbitMQ server      19                              ##
+## docker.io   docker.io/frodenas/rabbitmq                            A Docker Image for RabbitMQ                     12                   [OK]       ##
+## docker.io   docker.io/kbudde/rabbitmq-exporter                     rabbitmq_exporter for prometheus                9                    [OK]       ##
+## docker.io   docker.io/arm32v7/rabbitmq                             RabbitMQ is an open source multi-protocol ...   7                               ##
+## docker.io   docker.io/cyrilix/rabbitmq-mqtt                        RabbitMQ MQTT Adapter                           7                    [OK]       ##
+## docker.io   docker.io/sysrun/rpi-rabbitmq                          RabbitMQ Container for the Raspberry Pi 2 ...   7                               ##
+## docker.io   docker.io/gonkulatorlabs/rabbitmq                      DEPRECATED: See maryville/rabbitmq              5                    [OK]       ##
+## docker.io   docker.io/aweber/rabbitmq-autocluster                  RabbitMQ with the Autocluster Plugin            4                               ##
+## docker.io   docker.io/gavinmroy/alpine-rabbitmq-autocluster        Minimal RabbitMQ image with the autocluste...   3                               ##
+## docker.io   docker.io/luiscoms/openshift-rabbitmq                  RabbitMQ docker image to use on Openshift ...   3                    [OK]       ##
+## docker.io   docker.io/pivotalrabbitmq/rabbitmq-autocluster         RabbitMQ with the rabbitmq-autocluster plu...   3                               ##
+## docker.io   docker.io/pivotalrabbitmq/rabbitmq-server-buildenv     Image used to build and test RabbitMQ serv...   3                               ##
+## docker.io   docker.io/henrylv206/rabbitmq-autocluster              RabbitMQ Cluster                                2                    [OK]       ##
+## docker.io   docker.io/kuberstack/kubernetes-rabbitmq-autocluster   RabbitMQ Autoscaler for Kubernetes using K...   2                    [OK]       ##
+## docker.io   docker.io/activatedgeek/rabbitmqadmin                  A rabbitmqadmin docker image for administr...   1                    [OK]       ##
+## docker.io   docker.io/cvtjnii/rabbitmq                                                                             1                               ##
+## docker.io   docker.io/deadtrickster/rabbitmq_prometheus            RabbitMQ + Prometheus RabbitMQ Exporter pl...   1                               ##
+## docker.io   docker.io/foxylion/rabbitmq                            Preconfigured RabbitMQ docker image with s...   1                    [OK]       ##
+## docker.io   docker.io/webhostingcoopteam/rabbitmq-conf             RabbitMQ Configurator for Rancher               1                    [OK]       ##
+## docker.io   docker.io/ekesken/rabbitmq                             docker image for rabbitmq that is configur...   0                    [OK]       ##
+## docker.io   docker.io/newsdev/rabbitmq                             rabbitmq:olympics Extends official rabbitm...   0                    [OK]       ##
+## docker.io   docker.io/pdffiller/rabbitmq                           Rabbitmq 3.7.3 with delayed_message plugin...   0                               ##
+## docker.io   docker.io/vituity/openshift-rabbitmq                   RabbitMQ for OpenShift                          0                    [OK]       ##
+########################################################################################################################################################
+# 基于以上结果，我们选择使用次数最高的镜像拉取
+docker pull rabbitmq  
+# 运行
+docker run -d -p 8001:15672 -p 8002:5672 -p 8003:25672 rabbitmq:managment
+# 参数介绍
+# -p 端口映射，rabbitmq需要暴露15672，5672，25672 三个端口
+# :managment 对应的是 rabbitmq-plugins enable rabbitmq_management 安装外部访问组件
+```
+
+使用docker-image安装的rabbitmq没有对Guest用户做限制，此时可以使用 ip:8001 进行访问，用户 guest/guest
+
+至此Docker-RabbitMQ安装完成

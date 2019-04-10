@@ -11,6 +11,7 @@
 ## 使用yum安装
 
 准备工作,查询并卸载旧版本的docker
+
 ``` sh
 #查询本机存在的docker
 rpm qa|grep docker
@@ -29,11 +30,13 @@ yum remove docker \
 ```
 
 1、安装依赖
+
 ``` sh
 yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 
 2、添加docker源
+
 ``` sh
 sudo yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
 
@@ -50,22 +53,30 @@ yum makecache fast
 ```
 
 3、安装docker
+
 ``` sh
 yum install docker-ce
 ```
 
 4、启动docker并设置为自启动
+
 ``` sh
 systemctl enable docker
 systemctl start docker
 ```
 
 5、测试docker
+
 ```sh
 docker run hello-world
 ```
 
+> 常见错误
+> ```oci runtime error: container_linux.go:247: starting container process caused "process_linux.go:258``` 系统内核太低，尝试升级系统后解决此问题
+> ```Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?``` docker守护进程没有在运行中  ```systemctl start docker``` 启动docker-daemon
+
 **成功**
+
 ```info
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -96,15 +107,17 @@ For more examples and ideas, visit:
 ```
 
 **失败一**
+
 ```info
 Unable to find image 'hello-world:latest' locally
 docker: Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers).
 See 'docker run --help'
 ```
+
 出现以上信息，说明无法常速访问docker-Hub，通过配置[docker镜像加速器](https://yeasy.gitbooks.io/docker_practice/install/mirror.html)来解决这个问题
 
 > 配置CentOS镜像
-> ``` vim /etc/docker/daemon.json ```
+> ```vim /etc/docker/daemon.json```
 > 添加以下内容
 > ``` json
 > {
@@ -113,7 +126,7 @@ See 'docker run --help'
 >   ]
 > }
 > ```
-> 也可替换为 ``` https://j0andt2p.mirror.aliyuncs.com/ ```(阿里云docker-加速)
+> 也可替换为 ```https://j0andt2p.mirror.aliyuncs.com/```(阿里云docker-加速)
 > 请注意保持json格式，否则会出现docker无法启动的问题
 > 重启docker
 > ``` sh
