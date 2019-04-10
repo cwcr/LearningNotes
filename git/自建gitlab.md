@@ -1,6 +1,7 @@
 # 自建GitLab
 
 **注：** 以下安装基于
+
 * 阿里云
 * CentOS 7.3
 * [gitlab硬件要求](https://docs.gitlab.com.cn/ce/install/requirements.html)
@@ -8,11 +9,13 @@
 ---
 
 ## 安装gitlab
+
 安装准备：
 
 由于本次安装使用的是阿里云学生优惠机，单核/2G/40G,勉强达到硬件要求，首先调整swap分区为2G
 
 基于[阿里云社区](https://yq.aliyun.com/articles/52098)介绍，阿里云ECS实例默认是不开启swap分区，所以需要按照以下步骤逐步创建分区。请在安装gitlab之前先开启swap分区，否则会出现阿里云访问过慢的问题，另外可能出现[gitlab-unicorn无法启动报502的问题](https://docs.gitlab.com/ee/administration/operations/unicorn.html)
+
 ``` sh
 cat /proc/swaps #查看系统是否存在swap分区
 mkdir /data
@@ -27,9 +30,13 @@ swapon /data/swap
 ```
 
 1、更新系统，修补系统漏洞，增加系统安全性
-``` yum update ```
+
+``` sh
+yum update
+```
 
 2、安装http及ssh工具
+
 ``` sh
 yum install -y curl policycoreutils-python openssh-server
 systemctl enable sshd
@@ -37,6 +44,7 @@ systemctl start sshd
 ```
 
 3、开放防火墙http权限(无firewall可跳过此步)
+
 ```sh
 firewall-cmd --permanent --add-service=http
 systemctl restart firewalld
@@ -44,11 +52,13 @@ systemctl restart firewalld
 
 此步开启的是默认http端口(80)端口，如更换过gitlab启动端口的，可以按照以下步骤开放端口权限
 
-``` firewall-cmd --zone=public --add-port=端口/tcp --permanent ```
+``` sh
+firewall-cmd --zone=public --add-port=端口/tcp --permanent
+ ```
 
 4、安装邮件服务(postfix)如无需要，可跳过
 
-``` sh 
+``` sh
 yum install postfix
 systemctl enable postfix
 systemctl start postfix
@@ -89,11 +99,13 @@ _注：以上为gitlab 社区版安装方式，如需要企业版，可将其中
 
 1、查看gitlab版本号
 
-```cat /opt/gitlab/embedded/service/gitlab-rails/VERSION ```
+``` sh
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION 
+```
 
 2、gitlab-ce和gitlab-ee汉化方式相同，需要拉取对应版本号的汉化包。请按照上面地址自行拉取。
 
-```
+``` sh
 wget https://gitlab.com/xhang/gitlab/-/archive/11-7-stable-zh/gitlab-11-7-stable-zh.tar.gz
 tar -zxvf gitlab-11-7-stable-zh.tar.gz
 ```
@@ -109,6 +121,7 @@ tar -zxvf gitlab-11-7-stable-zh.tar.gz
 ```cp -r /opt/gitlab/embedded/service/gitlab-rails/* /home/test/bak ```
 
 4、执行汉化
+
 ``` sh
 \cp -rf gitlab-11-7-stable-zh/* /opt/gitlab/embedded/service/gitlab-rails/
 ```
@@ -124,9 +137,10 @@ tar -zxvf gitlab-11-7-stable-zh.tar.gz
 至此，汉化工作到此结束。
 
 ---
+
 ## gitlab 相关命令
 
- * gitlab-ctl reconfig 使新配置生效
- * gitlab-ctl restart 启动/重启gitlab
- * gitlab-ctl status 查看服务状态
- * gitlab-ctl tail unicorn 查看指定服务的日志，unicorn可替换为其他服务
+* gitlab-ctl reconfig 使新配置生效
+* gitlab-ctl restart 启动/重启gitlab
+* gitlab-ctl status 查看服务状态
+* gitlab-ctl tail unicorn 查看指定服务的日志，unicorn可替换为其他服务
