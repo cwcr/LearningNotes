@@ -4,7 +4,7 @@
 
 * 阿里云
 * CentOS 7.3
-* [gitlab硬件要求](https://docs.gitlab.com.cn/ce/install/requirements.html)
+* [gitlab硬件要求](https://docs.gitlab.com/ce/install/requirements.html)
 
 ---
 
