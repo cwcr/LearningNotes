@@ -22,4 +22,6 @@ docker pull imageNAME:imageTAG # 拉取镜像
 docker run -d -p imageNAME:imageTAG/imageID # 运行镜像
 
 docker exec -it containID /bin/bash # 进入一个正在运行中的容器中进行操作
+
+docker logs -f -t tail 10 containID # 查看一个正在运行中的容器的日志输出
 ```
