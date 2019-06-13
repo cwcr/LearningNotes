@@ -16,3 +16,14 @@ Hzero值集定义在设计的时候做了防缓存击穿机制，当开发设计
 
 * hpfm:lov:lov_fail_fast:{code}:{telentId}:{lang}
 * hpfm:lov:values_fail_fast:{code}:{telentId}:{lang}
+
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:lov_fail_fast*" 5f562fdd65f292ef18e2c3329f3e767bac1745e8| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:lov_fail_fast*" 2d35bc89f82ee93f1d925c62dd3fab3f5410e67f| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:lov_fail_fast*" b858c1c306fdfb71ac3f7444bd4c297296bf4905| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:values_fail_fast*" 5f562fdd65f292ef18e2c3329f3e767bac1745e8| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:values_fail_fast*" 2d35bc89f82ee93f1d925c62dd3fab3f5410e67f| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD keys "hpfm:lov:values_fail_fast*" b858c1c306fdfb71ac3f7444bd4c297296bf4905| xargs -L 5000 redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD DEL
+
+删除权限集
+
+redis-cli -h 172.16.0.9 -p 6379 -a c4QvYJu6yixiv6HD del "hgwh:permissions:hcbm-mdata:post"

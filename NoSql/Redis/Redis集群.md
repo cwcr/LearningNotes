@@ -6,6 +6,12 @@
 
 更详细的信息可以参照
 
+[docker 搭建redis-slave集群](https://segmentfault.com/a/1190000010131816)
+
+[docker 搭建redis-cluster集群说明](https://www.jianshu.com/p/b7dea62bcd8b)
+
+[docker 搭建redis-cluster](./redis-cluster)
+
 [Redis Cluster 添加/删除 完整折腾步骤](http://blog.51cto.com/hsbxxl/1965706),
 
 [Redis集群官方教程](https://redis.io/topics/cluster-tutorial)
