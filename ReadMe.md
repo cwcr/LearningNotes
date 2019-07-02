@@ -1,47 +1,86 @@
-# 目录 <span id="head"></span>
+<span id="head"></span>
 
-## Git
+# 目录
 
->* [git命令记录](./git/git命令.md)
+## docker
 
-## Hap
+>* [CentOS搭建docker.md](.\docker\CentOS搭建docker.md)
+>* [Docker-learning.md](.\docker\Docker-learning.md)
+>* [Docker常用命令.md](.\docker\Docker常用命令.md)
+>* [Docker资源.md](.\docker\Docker资源.md)
 
->* [关于Lov的配置说明](./hap/关于lov的配置说明.md)
+## git
 
-## Java
+>* [git命令.md](.\git\git命令.md)
+>* [自建gitlab.md](.\git\自建gitlab.md)
 
->* [java.time.*](./java/java.time.md)
->* [Tomcat日志乱码问题](./java/Tomcat乱码问题.md)
->* [Tomcat启动时jar包互相依赖问题](./java/Tomcat启动时jar包互相依赖问题.md)
+## java
 
-## NoSQL
+>* [java.time.md](.\java\java.time.md)
+>* [Tomcat乱码问题.md](.\java\Tomcat乱码问题.md)
+>* [Tomcat启动时jar包互相依赖问题.md](.\java\Tomcat启动时jar包互相依赖问题.md)
 
->* [MongoDB](./NoSql/MongoDB学习记录.md)
->* [Redis命令记录](./NoSql/redis/redis命令记录.md)
->* [Redis集群](./NoSql/redis/Redis集群.md)
+## kubernetes
+
+>* [Centos安装Kubernetes.md](.\kubernetes\Centos安装Kubernetes.md)
+>* [k8s介绍.md](.\kubernetes\k8s介绍.md)
+
+### 腾讯云安装记录
+
+>* [安装记录.md](.\kubernetes\腾讯云安装记录\安装记录.md)
+>* [问题记录.md](.\kubernetes\问题记录.md)
+
+## linux
+
+>* [CentOS7.6-vm.md](.\linux\CentOS7.6-vm.md)
+>* [swap.md](.\linux\swap.md)
+>* [常见问题排查.md](.\linux\常见问题排查.md)
+>* [记一次有问题的patch.md](.\linux\记一次有问题的patch.md)
+
+## markdown
+
+>* [markdown文档目录自动生成](.\markdown\AutoCreateReadme.java)
+
+## nginx
+
+>* [nginx文件上传报错.md](.\nginx\nginx文件上传报错.md)
+
+## NoSql
+
+>* [MongoDB学习记录.md](.\NoSql\MongoDB学习记录.md)
+
+### Redis
+
+>* [ReadMe.md](.\NoSql\Redis\redis-cluster\ReadMe.md)
+>* [redis命令记录.md](.\NoSql\Redis\redis命令记录.md)
+>* [redis安全性控制.md](.\NoSql\Redis\redis安全性控制.md)
+>* [Redis集群.md](.\NoSql\Redis\Redis集群.md)
+
+## openvpn
+
+>* [openvpn安装说明.md](.\openvpn\openvpn安装说明.md)
+>* [openvpn连接远程swagger说明.md](.\openvpn\openvpn连接远程swagger说明.md)
+
+## oracle
+
+>* [oracle-11g数据迁移.md](.\oracle\oracle-11g数据迁移.md)
+
+## rabbitmq
+
+>* [Centos安装RabbitMq.md](.\rabbitmq\Centos安装RabbitMq.md)
+>* [rabbitmq介绍.md](.\rabbitmq\rabbitmq介绍.md)
+>* [rabbitmq常用命令.md](.\rabbitmq\rabbitmq常用命令.md)
+>* [消息中间件介绍.md](.\rabbitmq\消息中间件介绍.md)
 
 ## 前端
 
->* [pdf.js](./前端/pdf.js/learn.md)
+### node.js
 
-<!-- >* [问题记录](./前端/问题记录.md) -->
+>* [常用命令.md](.\前端\node.js\常用命令.md)
 
-## Docker
+## 微服务
 
->* [Centos搭建docker](./docker/CentOS搭建docker.md)
->* [Docker常用命令](./docker/Docker常用命令.md)
->* [Docker资源](./docker/Docker资源.md)
-
-<!-- >* [docker学习日志](./docker/Docker-learning.md) -->
-
-## Oracle
-
->* [oracle-11g数据迁移方案](./oracle/oracle-11g数据迁移.md)
-
-## RabbitMq
-
->* [Centos7环境下安装RabbitMq](./rabbitmq/Centos安装RabbitMq.md)
->* [消息中间件介绍](./rabbitmq/消息中间件介绍.md)
+>* [CAP理论.md](.\微服务\CAP理论.md)
 
 ---
 
